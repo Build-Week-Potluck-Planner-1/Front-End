@@ -9,12 +9,9 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux'
+import reducer from './reducers'
 
-const reducer = (state, action)=>{
-  switch(action.type){
-    default: return state
-  }
-}
+
 
 const store = createStore(reducer, applyMiddleware(thunk))
 
