@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Styles created by Peter Wood for the Login / Register pages below */
+.mainDiv {
+  background-color: white;
+  width: 350px;
+}
+
+.pageTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.inputField {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonsGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonsGroup button {
+  margin: 0 5px;
+}
+
+.buttonLink button {
+  background-color: inherit;
+  color: blue;
+  border: none;
+  text-decoration: underline;
+}
+/* End of Peter's Styles */
