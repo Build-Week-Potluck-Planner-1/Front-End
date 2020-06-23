@@ -109,4 +109,8 @@ nav button {
 .formInputDiv button {
   margin: 20px 0;
 }
+
+input[type='number'] {
+  width: 70px;
+}
 /* End of Peter's Styles */
