@@ -13,7 +13,11 @@ export const userReg = newUser => dispatch => {
         .then(res=>{
             dispatch({
                 type: UPDATE_REGISTER
-        });
+            });
+            //Peter's Test
+            console.log('newUser in register.js is:', newUser);
+            console.log('res in register.js is:', res);
+            //End of Peter's Test
         })
         .catch(err=>{
             console.error(err);
