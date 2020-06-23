@@ -1,6 +1,4 @@
-import {LOGIN, UPDATE_LOGIN, SET_ERROR} from '../actions/login';
 import {REGISTER, UPDATE_REGISTER} from '../actions/register';
-import {LOGOUT} from '../actions/logout'
 const initialState = {
     isFetchingData: false,
     username: '',
@@ -11,11 +9,6 @@ const initialState = {
 
 export const userReducer = (state = initialState, action)=>{
     switch(action.type){
-      case LOGIN: 
-        return{
-          ...state,
-          username: action.payload.username
-      }
       case REGISTER:
         return{
           ...state,
@@ -25,11 +18,6 @@ export const userReducer = (state = initialState, action)=>{
         return{
           ...state,
           isFetchingData: false
-        }
-      case LOGOUT:
-        return{
-          ...state,
-          username: ''
         }
       default: return state
     };

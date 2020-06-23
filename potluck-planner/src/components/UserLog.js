@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
-import {userLogin} from '../actions/login';
 import axiosWithAuth from '../utils/axiosWithAuth'
 
 const blankLog = {
@@ -45,7 +44,7 @@ function UserLog(props) {
 			<div className='pageTitle'>
 				<h2>Login</h2>
 			</div>
-			<form>
+			<form onSubmit={onSubmit}>
 				<div className='inputField'>
 					<label>Enter Email:</label>
 					<input 
@@ -67,7 +66,7 @@ function UserLog(props) {
 				</div>
 				<div className='buttonsGroup'>
 					<div>
-						<button type='submit' onSubmit={onSubmit}>Login</button>
+						<button type='submit'>Login</button>
 						<button>Cancel</button>
 					</div>
 					<div className='buttonLink'>
