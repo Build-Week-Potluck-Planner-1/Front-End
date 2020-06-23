@@ -32,16 +32,19 @@ function UserRegister(props) {
 		regEntries.email.trim()
 		regEntries.password.trim()
 		userReg(regEntries);
+		//Peter's Test
+		console.log('Current regEntries is:', regEntries);
+		//End of Peter's Test
 		history.push('/')
 
 	}
     return (
-        <div class='mainDiv'>
-			<div class='pageTitle'>
+        <div className='mainDiv'>
+			<div className='pageTitle'>
 				<h2>Register</h2>
 			</div>
 			<form onSubmit={onSubmit}>
-				<div class='inputField'>
+				<div className='inputField'>
 					<label>Enter First Name:</label>
 					<input 
 					type='text' 
@@ -51,7 +54,7 @@ function UserRegister(props) {
 					value={regEntries.firstName}
 					/>
 				</div>
-				<div class='inputField'>
+				<div className='inputField'>
 					<label>Enter Last Name:</label>
 					<input 
 					type='text' 
@@ -61,7 +64,7 @@ function UserRegister(props) {
 					value={regEntries.lastName}
 					/>
 				</div>
-				<div class='inputField'>
+				<div className='inputField'>
 					<label>Enter Email:</label>
 					<input 
 					type='email' 
@@ -70,7 +73,7 @@ function UserRegister(props) {
 					value={regEntries.email}
 					/>
 				</div>
-				<div class='inputField'>
+				<div className='inputField'>
 					<label>Enter Password:</label>
 					<input 
 					type='password' 
@@ -80,12 +83,12 @@ function UserRegister(props) {
 					value={regEntries.password}
 					/>
 				</div>
-				<div class='buttonsGroup'>
+				<div className='buttonsGroup'>
 					<div>
 						<button type='submit'>Confirm</button>
 						<button>Cancel</button>
 					</div>
-					<div class='buttonLink'>
+					<div className='buttonLink'>
                         <Link to='/'><button>Already have an account?</button></Link>
 					</div>
 				</div>

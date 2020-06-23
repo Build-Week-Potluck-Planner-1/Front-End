@@ -28,6 +28,10 @@ function UserLog(props) {
 		axiosWithAuth()
         .post('/api/auth/login', logEntries)
         .then(res=>{
+			//Peter's Test
+			console.log('Current logEntries is:', logEntries);
+			console.log('Current res.data is:', res.data);
+			//End of Peter's Test
             window.localStorage.setItem('token', res.data.authToken)
         })
         .catch(err=>{

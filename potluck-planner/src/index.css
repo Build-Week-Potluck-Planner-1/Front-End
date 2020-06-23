@@ -14,9 +14,45 @@ code {
 
 
 /* Styles created by Peter Wood for the Login / Register pages below */
+header {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #B4ABFA;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav button {
+  margin: 0 5px;
+  height: 30px;
+  color: white;
+  background-color: inherit;
+  border: none;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .mainDiv {
-  background-color: white;
+  background-color: #FDFD96;
   width: 350px;
+  border: 2px solid #FFD300;
+  border-radius: 20px;
+  box-shadow: -5px 10px 10px #808000A0;
+  padding: 10px;
+  margin: 20px 10px;
 }
 
 .pageTitle {
@@ -36,7 +72,7 @@ code {
 }
 
 .buttonsGroup button {
-  margin: 0 5px;
+  margin: 10px 5px;
 }
 
 .buttonLink button {
@@ -44,5 +80,33 @@ code {
   color: blue;
   border: none;
   text-decoration: underline;
+}
+
+.locationForm {
+  width: 420px;
+  margin: 20px;
+  background-color: #B4CBDE;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px #4D4E4F80;
+}
+
+.locationForm h2, h3 {
+  padding: 10px;
+}
+
+.formInputDiv {
+  width: 400px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.formInputDiv div {
+  width: 50%;
+}
+
+.formInputDiv button {
+  margin: 20px 0;
 }
 /* End of Peter's Styles */
