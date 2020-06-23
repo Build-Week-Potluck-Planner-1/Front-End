@@ -107,6 +107,7 @@ function HostEvent(props) {
                         <option value='Mexico'>Mexico</option>
                         <option value='England'>England</option>
                         <option value='Wales'>Wales</option>
+                        <option value='Neverwinter'>Neverwinter</option>
                         <option value='Ireland'>Ireland</option>
                         <option value='Scotland'>Scotland</option>
                         <option value='Germany'>Germany</option>
@@ -117,6 +118,7 @@ function HostEvent(props) {
                         <option value='Spain'>Spain</option>
                         <option value='Portugal'>Portugal</option>
                         <option value='Belgium'>Belgium</option>
+                        <option value='Amn'>Amn</option>
                         <option value='Denmark'>Denmark</option>
                         <option value='Sweden'>Sweden</option>
                         <option value='Norway'>Norway</option>
@@ -133,6 +135,7 @@ function HostEvent(props) {
                         <option value='Slovenia'>Slovenia</option>
                         <option value='Austria'>Austria</option>
                         <option value='Bulgaria'>Bulgaria</option>
+                        <option value='Myth Drannor'>Myth Drannor</option>
                         <option value='Romania'>Romania</option>
                         <option value='Belarus'>Belarus</option>
                         <option value='Estonia'>Estonia</option>
@@ -146,11 +149,13 @@ function HostEvent(props) {
                         <option value='Israel'>Israel</option>
                         <option value='Palestine'>Palestine</option>
                         <option value='United Arab Emirates'>United Arab Emirates</option>
+                        <option value="Baldur's Gate">Baldur's Gate</option>
                         <option value='Libya'>Libya</option>
                         <option value='Algeria'>Algeria</option>
                         <option value='Morocco'>Morocco</option>
                         <option value='Chad'>Chad</option>
                         <option value='Sudan'>Sudan</option>
+                        <option value='Eberron'>Eberron</option>
                         <option value='Mauritania'>Mauritania</option>
                         <option value='Ghana'>Ghana</option>
                         <option value='Ethiopia'>Ethiopia</option>
@@ -169,6 +174,7 @@ function HostEvent(props) {
                         <option value='Myanmar'>Myanmar</option>
                         <option value='Vietnam'>Vietnam</option>
                         <option value='Cambodia'>Cambodia</option>
+                        <option value='Candlekeep'>Candlekeep</option>
                         <option value='Laos'>Laos</option>
                         <option value='Thailand'>Thailand</option>
                         <option value='Philippines'>Philippines</option>
