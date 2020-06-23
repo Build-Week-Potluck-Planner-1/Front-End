@@ -1,6 +1,6 @@
 export const LOGOUT = 'LOGOUT';
 
-export const logout = () => {
+export const logout = () => dispatch => {
     dispatch({
         type: LOGOUT
     });
