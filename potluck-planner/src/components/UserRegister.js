@@ -21,7 +21,8 @@ const blankReg = {
 		  .min(2, 'Last name must be at least 2 characters long'),
 	  email: yup
 		  .string()
-		  .required('Please enter a valid email address. This will be used as your login.'),
+		  .email('Please enter a valid email address. This will be used as your login.')
+		  .required('An email address is required to create an account.'),
 	  password: yup
 		  .string()
 		  .min(6, 'Passwords must be at least 6 characters long')
@@ -130,7 +131,7 @@ function UserRegister(props) {
                         <Link to='/'><button>Already have an account?</button></Link>
 					</div>
 				</div>
-				<div className='regErrorsDiv'>
+				<div className='errorsDiv'>
 					<div>{registerError.firstName}</div>
 					<div>{registerError.lastName}</div>
 					<div>{registerError.email}</div>
