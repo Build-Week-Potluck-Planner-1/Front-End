@@ -82,8 +82,8 @@ function HostEvent(props) {
     }
 
     return (
-        <div>
-            <form className='locationForm' onSubmit={handleSubmit}>
+        <div className='locationForm'>
+            <form onSubmit={handleSubmit}>
                 <h2>Host a New Event</h2>
                 <h3>Fill out Location of Event below:</h3>
                 <div className='formInputDiv'>
