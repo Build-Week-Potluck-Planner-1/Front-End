@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth'
@@ -80,7 +80,6 @@ function UserLog(props) {
 					</div>
 				</div>
 			</form>
-			<Link to='/dashboard'>shouldn't work</Link>
 		</div>
     );
 }

@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
-
+import axiosWithAuth from '../utils/axiosWithAuth';
 import HostEvent from './HostEvent';
 
 function Dashboard(props) {
     //const {id, firstName, lastName} = props;
     const {firstName, lastName} = {firstName: 'Joe', lastName: 'Somebody'};
+    useEffect(()=>{
+		axiosWithAuth()
+			.get('/api/potlucks')
+			.then(res=>{
+				console.log('response from /potlucks', res)
+			})
+			.catch(err=>{console.error(err)})
+			
+	})
     return(
         <BrowserRouter>
             <header>
