@@ -12,7 +12,6 @@ import PrivateRoute from './components/privateRoute';
 
 
 
-
 function App() {
   return (
     <Switch>

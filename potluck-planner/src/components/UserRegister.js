@@ -3,6 +3,8 @@ import {Link, useHistory} from 'react-router-dom';
 import {userReg} from '../actions/register'
 import {connect} from 'react-redux'
 
+import * as yup from 'yup';
+
 const blankReg = {
 	firstName: '',
 	lastName: '',
@@ -10,14 +12,50 @@ const blankReg = {
 	password: ''
   };
 
+  const registerSchema = yup.object().shape({
+	  firstName: yup
+		  .string()
+		  .min(2, 'First name must be at least 2 characters long'),
+	  lastName: yup
+		  .string()
+		  .min(2, 'Last name must be at least 2 characters long'),
+	  email: yup
+		  .string()
+		  .required('Please enter a valid email address. This will be used as your login.'),
+	  password: yup
+		  .string()
+		  .min(6, 'Passwords must be at least 6 characters long')
+		  .required('Please enter a password to use with your email login')
+
+  });
+
+  const clearErrors = {
+	  firstName: '',
+	  lastName: '',
+	  email: '',
+	  password: ''
+  };
+
 function UserRegister(props) {
 	const {userReg} = props;
 	const [regEntries, setRegEntries] = useState(blankReg);
 	const history = useHistory();
 
+	const [registerError, setErrors] = useState(clearErrors);
+
 	const changeHandler = event=>{
 		const name = event.target.name;
 		const value = event.target.value;
+
+		yup
+			.reach(registerSchema, name)
+			.validate(value)
+			.then(() => {
+				setErrors({...registerError, [name]: ''});
+			})
+			.catch(changeErr => {
+				setErrors({...registerError, [name]: changeErr.errors[0]});
+			})
 
 		setRegEntries({
 			...regEntries,
@@ -91,6 +129,12 @@ function UserRegister(props) {
 					<div className='buttonLink'>
                         <Link to='/'><button>Already have an account?</button></Link>
 					</div>
+				</div>
+				<div className='regErrorsDiv'>
+					<div>{registerError.firstName}</div>
+					<div>{registerError.lastName}</div>
+					<div>{registerError.email}</div>
+					<div>{registerError.password}</div>
 				</div>
 			</form>
 		</div>

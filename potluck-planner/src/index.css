@@ -82,6 +82,10 @@ nav button {
   text-decoration: underline;
 }
 
+.regErrorsDiv {
+  color: red;
+}
+
 .locationForm {
   width: 420px;
   margin: 20px;
