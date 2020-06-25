@@ -4,13 +4,28 @@ import axiosWithAuth from '../utils/axiosWithAuth';
 
 function SearchEvents(props) {
     const [searchEvents, getAllEvents] = useState([]);
+    const [searchVal, setSearchVal] = useState('');
+    const [newEvents, setNewEvents] = useState(searchEvents);
+
+
+    const filterEvents = (event)=>{
+        const value = event.target.value;
+        setSearchVal(value)
+        setNewEvents(searchEvents.filter(potluck=>{
+            if(!searchVal){
+                return SearchEvents
+            }else{
+                return potluck.locationName.toLowerCase().includes(value.toLowerCase())
+            }
+            
+        }));
+    }
 
     useEffect(() => {
         axiosWithAuth().get('/api/potlucks')
             .then(responseSearch => {
-                console.log('Showing data from responseSearch:', responseSearch.data);
                 getAllEvents(responseSearch.data);
-                console.log('Display searchEvents:', searchEvents);
+                setNewEvents(responseSearch.data);
             })
             .catch(responseError => {
                 console.log('Error in searching for potlucks');
@@ -18,21 +33,26 @@ function SearchEvents(props) {
     }, []);
 
     return (
+        <>
+        <label>
+            Search Events 
+            <input
+                value={searchVal}
+                onChange={filterEvents}
+            />
+        </label>
         <div className='eventContainer'>
-            {searchEvents.map(eventItem => (
-                <PotluckDetails key={eventItem.id} theEvent={eventItem} />
+            {newEvents.map(eventItem => (
+                <PotluckDetails key={eventItem.potluckId} theEvent={eventItem} />
             ))}
         </div>
+        </>
     );
 }
 
 function PotluckDetails({theEvent}) {
-    const {locationName, role, locationAddress, locationStreet, locationCity, locationState, locationPostcode, locationCountry, userId} = theEvent;
+    const {locationName, role} = theEvent;
     let userStatus = '';
-
-    console.log('PotluckDetails tests below');
-    console.log('locationName is:', locationName);
-    console.log('role is:', role);
 
     if(role === 0) {
         userStatus = 'Host';
@@ -41,7 +61,7 @@ function PotluckDetails({theEvent}) {
     }
 
     return (
-        <Link to={`/searchform/${theEvent.id}`}>
+        <Link to={`/searchform/${theEvent.potluckId}`}>
             <div className='eventTitleCard'>
                 <h1>{locationName}</h1>
                 <p>{userStatus}</p>
