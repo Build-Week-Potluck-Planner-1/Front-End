@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 
 import HostEvent from './HostEvent';
+import SearchEvents from './SearchEvents'
 
 function Dashboard(props) {
     //const {id, firstName, lastName} = props;
@@ -25,6 +26,9 @@ function Dashboard(props) {
                 </Route> */}
                 <Route path='/hostform'>
                     <HostEvent />
+                </Route>
+                <Route path='/searchform'>
+                    <SearchEvents />
                 </Route>
             </Switch>
         </BrowserRouter>
