@@ -13,5 +13,10 @@ export const addPotluck = potluck => dispatch => {
         .then(res=>{
             console.log(res);
         })
-        .catch(err=> console.error(err));
+        .catch(err=> {
+            console.error(err);
+            dispatch({
+                type: SET_ERROR, payload: err
+            });
+        });
 };

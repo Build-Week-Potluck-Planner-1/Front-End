@@ -82,9 +82,14 @@ nav button {
   text-decoration: underline;
 }
 
+.errorsDiv {
+  color: red;
+}
+
 .locationForm {
   width: 420px;
   margin: 20px;
+  padding: 10px;
   background-color: #B4CBDE;
   border: 2px solid black;
   border-radius: 20px;
