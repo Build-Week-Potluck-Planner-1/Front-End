@@ -79,6 +79,8 @@ function HostEvent(props) {
     const handleSubmit = event =>{
         event.preventDefault();
         addPotluck(eventVals)
+        //Peter's Test to clear form after pressing 'Create Event'
+        setEventVals(initialVals);
     }
 
     return (
