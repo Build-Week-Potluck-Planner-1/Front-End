@@ -31,7 +31,6 @@ function Dashboard() {
     const dispatch = useDispatch()
     const potlucks = useSelector((state)=>state.potlucks)
     useEffect(()=>{
-        console.log('getting potlucks')
         dispatch(checkDelete())
 	}, [])
     return(

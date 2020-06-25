@@ -21,7 +21,6 @@ function PotluckEdit (){
     const potlucks = useSelector((state)=>state.potlucks);
     const dispatch = useDispatch();
     const history = useHistory();
-    console.log(potlucks)
     const [potluckVals, setPotluckVals] = useState({});
 
     const onChange = event =>{

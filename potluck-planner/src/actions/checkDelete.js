@@ -11,7 +11,6 @@ export const checkDelete = () => dispatch => {
     axiosWithAuth()
         .get('/api/potlucks')
         .then(res=>{
-            console.log('Potlucks', res.data)
             const newPotlucks = res.data.map((potluck, index)=>{
                 const newPotluck = {
                     id: potluck.potluckId,
@@ -26,7 +25,6 @@ export const checkDelete = () => dispatch => {
                 }
                 return newPotluck;
             })
-            console.log(newPotlucks)
             dispatch({
                 type: SET_POTLUCKS, payload: newPotlucks
             })

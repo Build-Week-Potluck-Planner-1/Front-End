@@ -11,7 +11,6 @@ export const addPotluck = potluck => dispatch => {
     axiosWithAuth()
         .post('/api/potlucks', potluck)
         .then(res=>{
-            console.log(res);
             dispatch({
                 type: UPDATE_POTLUCKS, payload: res.data[0]
             })

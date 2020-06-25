@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import * as yup from 'yup';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {addPotluck} from '../actions/addPotluck';
 import CountryList from './countryList';
 import StateList from './stateList';
@@ -42,8 +42,6 @@ const hostSchema = yup.object().shape({
 
 function HostEvent(props) {
     const dispatch = useDispatch();
-    const potlucks = useSelector((state)=>state.potlucks)
-    console.log(potlucks)
     const history = useHistory();
     const [eventVals, setEventVals] = useState(initialVals);
     const [hostingErrors, setHostErrors] = useState(clearErrs);
@@ -85,7 +83,7 @@ function HostEvent(props) {
         dispatch(addPotluck(eventVals))
         //Peter's Test to clear form after pressing 'Create Event'
         setEventVals(initialVals);
-        history.push(`/searchform`)
+        history.push(`/dashboard`)
     }
 
     return (
