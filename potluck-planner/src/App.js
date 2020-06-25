@@ -1,28 +1,40 @@
-import React, {useState, useEffect} from 'react';
-import logo from './logo.svg';
+//React imports
+import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import axios from 'axios';
+import './App.css';
+
+//Component imports
 import UserLog from './components/UserLog';
 import UserRegister from './components/UserRegister';
-import './App.css';
 import Dashboard from './components/dashboard';
 import PrivateRoute from './components/privateRoute';
-
+import EventCard from './components/eventCard';
+import HostEvent from './components/HostEvent';
+import SearchEvents from './components/SearchEvents';
+import Header from './components/header';
+import PotluckEdit from './components/potluckEdit';
 
 
 
 
 function App() {
   return (
-    <Switch>
-      <Route exact path='/'>
-        <UserLog/>
-      </Route>
-      <Route exact path='/register'>
-        <UserRegister/>
-      </Route>
-      <PrivateRoute path='/dashboard' component={Dashboard}/>
-    </Switch>
+    <>
+      <Header/>
+      <Switch>
+        <Route exact path='/'>
+          <UserLog/>
+        </Route>
+        <Route exact path='/register'>
+          <UserRegister/>
+        </Route>
+        <PrivateRoute path='/dashboard' component={Dashboard}/>
+        <PrivateRoute path='/hostform' component={HostEvent}/>
+        <PrivateRoute path='/searchform/:id' component={EventCard}/>
+        <PrivateRoute path='/searchform' component={SearchEvents}/>
+        <PrivateRoute path='/editing/:id' component={PotluckEdit}/>
+      </Switch>
+    </>
   );
 }
 

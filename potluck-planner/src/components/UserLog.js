@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import {connect} from 'react-redux';
+import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import axiosWithAuth from '../utils/axiosWithAuth'
 
@@ -8,9 +7,8 @@ const blankLog = {
 	password: ''
   };
 
-function UserLog(props) {
+function UserLog() {
 	const [logEntries, setLogEntries] = useState(blankLog);
-	const {userLogin} = props;
 	const history = useHistory();
 	
 	const changeHandler = event =>{

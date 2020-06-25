@@ -12,6 +12,9 @@ export const addPotluck = potluck => dispatch => {
         .post('/api/potlucks', potluck)
         .then(res=>{
             console.log(res);
+            dispatch({
+                type: UPDATE_POTLUCKS, payload: res.data[0]
+            })
         })
         .catch(err=> {
             console.error(err);
