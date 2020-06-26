@@ -4,13 +4,14 @@ import {GET_POTLUCKS, SET_POTLUCKS} from '../actions/getPotlucks';
 import {EDIT_POTLUCK, UPDATE_POTLUCK} from '../actions/editPotluck';
 import {DELETE_POTLUCK} from '../actions/deletePotluck';
 import {CHECK_DELETE} from '../actions/checkDelete'
-import {ADD_GUEST, UPDATE_GUESTS} from '../actions/addGuest'
+import {ADD_GUEST, UPDATE_GUESTS, RESET_SUCCESS} from '../actions/addGuest'
 
 const initialState = {
     isFetchingData: false,
     potlucks: [],
     deletePotlucks: '',
-    error: ''
+    error: '',
+    success: false
 }
 
 export const reducer = (state = initialState, action)=>{
@@ -29,6 +30,17 @@ export const reducer = (state = initialState, action)=>{
             return{
                 ...state,
                 isFetchingData: true
+            }
+        case UPDATE_GUESTS:
+            return{
+                ...state,
+                success: true,
+                isFetchingData: false
+            }
+        case RESET_SUCCESS:
+            return{
+                ...state,
+                success: false
             }
         case CHECK_DELETE:
             return{

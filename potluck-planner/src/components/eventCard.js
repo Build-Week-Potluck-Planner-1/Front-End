@@ -24,7 +24,7 @@ function EventCard(){
     const history = useHistory();
     const potlucks = useSelector((state)=>state.potlucks);
     const [potluck, setPotluck] = useState({})
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();    
 
     const initialGuestVals = {
         potluckId: id,
