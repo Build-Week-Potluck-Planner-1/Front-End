@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {useDispatch, useSelector} from 'react-redux';
 import {checkDelete} from '../actions/checkDelete';
 
+/*
 const StyledCards = styled.div`
     display: flex;
     flex-direction: column;
@@ -26,13 +27,48 @@ const StyledCards = styled.div`
         }
     }
 `
+*/
+
+//Certain edits made by Peter. See above for original
+const StyledCards = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 1% 30%;
+    text-align: center;
+    align-content: center;
+
+    a{
+        transform: skew(20deg);
+        text-decoration: none;
+        color: #990000;
+        border: 4px solid #FFD700;
+        border-radius: 20px;
+        background: linear-gradient(to top right, #FED23B, #FEE589, #FED23B);
+        box-shadow: -10px 10px 10px #FEE589C0;
+        height: 3%;
+        margin: 2% 0;
+        font-size: 2rem;
+        font-weight: bolder;
+
+        &:hover{
+            background: rgb(200, 200, 210);
+        }
+    }
+
+    .eventName {
+        transform: skew(-20deg);
+        padding: 5%;
+    }
+`
 
 function Dashboard() {
     const dispatch = useDispatch()
     const potlucks = useSelector((state)=>state.potlucks)
     useEffect(()=>{
         dispatch(checkDelete())
-	}, [])
+    }, [])
+
     return(
         <>
         {potlucks.length === 0 ? 
@@ -45,7 +81,7 @@ function Dashboard() {
                 to= {`/searchform/${potluck.id}`} 
                 key={potluck.id}
                 >
-                    {potluck.locationName}
+                    <div className='eventName'>{potluck.locationName}</div>
                 </Link>
             )
         })}

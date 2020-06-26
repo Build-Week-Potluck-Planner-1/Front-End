@@ -5,11 +5,15 @@ import {editPotluck} from '../actions/editPotluck'
 import {useDispatch, useSelector} from 'react-redux'
 
 const EditForm = styled.form`
-    width: 80%;
-    margin: 1% 10%;
+    width: 400px;
+    margin: 2% 5%;
+    padding: 4%;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
+    background: #FFEAAE;
+    border: 4px solid #EEBC77;
+    box-shadow: -20px 10px 10px #EEAA5B80;
 
     input{
         margin: 1% 0;
@@ -56,10 +60,92 @@ function PotluckEdit (){
             setPotluckVals(potluck)
         };
     })}, []);
+
+    const editStyles = function() {
+        return {
+            inputs: {
+                width: '75%',
+                display: 'flex',
+                justifyContent: 'space-between'
+            }
+        };
+    };
+
     return(
         <EditForm onSubmit={handleSubmit}>
-            <h2>Edit Potluck</h2>    
-            <label>
+            <h2>Edit Potluck</h2>
+            <div style={editStyles().inputs}>
+                <label>Event Name:</label>
+                <input
+                    type='text'
+                    name='locationName'
+                    placeholder='Event Name'
+                    value= {potluckVals.locationName}
+                    onChange={onChange}
+                />
+            </div>
+            <div style={editStyles().inputs}>
+                <label>Address #:</label>
+                <input
+                    type='text'
+                    name='locationAddress'
+                    placeholder='address'
+                    value= {potluckVals.locationAddress}
+                    onChange={onChange}
+                />
+            </div>
+            <div style={editStyles().inputs}>
+                <label>Street:</label>
+                <input
+                    type='text'
+                    name='locationStreet'
+                    placeholder = 'street'
+                    value= {potluckVals.locationStreet}
+                    onChange={onChange}
+                />
+            </div>
+            <div style={editStyles().inputs}>
+                <label>City:</label>
+                <input
+                    type='text'
+                    name='locationCity'
+                    placeholder='city'
+                    value= {potluckVals.locationCity}
+                    onChange={onChange}
+                />
+            </div>
+            <div style={editStyles().inputs}>
+                <label>State:</label>
+                <input
+                    type='text'
+                    name='locationState'
+                    placeholder= 'state'
+                    value= {potluckVals.locationState}
+                    onChange={onChange}
+                />
+            </div>
+            <div style={editStyles().inputs}>
+                <label>ZIP Code:</label>
+                <input
+                    type='text'
+                    name='locationPostcode'
+                    placeholder='Postal code'
+                    value= {potluckVals.locationPostcode}
+                    onChange={onChange}
+                />
+            </div>
+            <div style={editStyles().inputs}>
+                <label>Country:</label>
+                <input
+                    type='text'
+                    name='locationCountry'
+                    placeholder='country'
+                    value= {potluckVals.locationCountry}
+                    onChange={onChange}
+                />
+            </div>
+
+            {/* <label>
                 Event Name
                 <input
                 type='text'
@@ -128,7 +214,7 @@ function PotluckEdit (){
                 value= {potluckVals.locationStreet}
                 onChange={onChange}
             />
-            </label>
+            </label> */}
             <button>Submit</button>
             
         </EditForm>

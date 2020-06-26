@@ -68,7 +68,7 @@ function EventCard(){
             <h1>{potluck.locationName}</h1>
             <p>{potluck.locationAddress} {potluck.locationStreet}</p>
             <p>{potluck.locationCity}, {potluck.locationState}, {potluck.locationCountry} </p>
-            <p>{potluck.role===0 ? 'host': 'guest'}</p>
+            <p>{potluck.role===0 ? 'Host': 'Guest'}</p>
             {potluck.role===0 && <>
             <Link to={`/editing/${id}`}>
                 <button>Edit</button> 
@@ -76,7 +76,7 @@ function EventCard(){
                 <br/>
                 <button onClick={deleteEvent}>Delete</button>
                 <br/>
-                <label>Add guest
+                <label>Add Guest:&nbsp;
                     <input
                         type='text'
                         placeholder='email'
