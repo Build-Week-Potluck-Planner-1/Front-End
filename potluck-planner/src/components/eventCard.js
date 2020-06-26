@@ -7,13 +7,63 @@ import styled from 'styled-components';
 import {addGuest} from '../actions/addGuest';
 
 const StyledCard = styled.div`
+    display: flex;
+    flex-direction: column;
     width: 40%;
     margin: 1% 30%;
-    border: 2px solid gainsboro;
     text-align: center;
-    
-    button{
-       margin: 0 2% 5% 2%;
+    align-content: center;
+    color: #990000;
+    border: 4px solid #FFD700;
+    border-radius: 20px;
+    background: linear-gradient(to top right, #FED23B, #FEE589, #FED23B);
+    box-shadow: -10px 10px 10px #FEE589C0;
+    height: 3%;
+    font-size: 2rem;
+    font-weight: bolder;
+
+        p{
+            font-size: 1.6rem;
+        }
+        a:hover{
+            cursor: pointer;
+        }
+        button{
+            width: 20%;
+            margin: 0 40%;
+            background: #990000;
+            color: #FED23B;
+            font-weight: bold;
+            border: 2px solid #FEE589;
+            border-radius: 5px;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        label{
+            margin-bottom: 4%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            input{
+                height: 1.8rem;
+                font-size: 1.2rem;
+                width: 40%;
+            }
+            button{
+                margin: 0 1%;
+                font-size: 1.8rem;
+                border: 2px solid #FEE589;
+                border-radius: 5px;
+            }
+        }
+
+    .eventName {
+        transform: skew(-20deg);
+        padding: 5%;
     }
 `
 

@@ -59,7 +59,7 @@ function PotluckEdit (){
             if (potluck.id === Number(id)){
             setPotluckVals(potluck)
         };
-    })}, []);
+    })}, [id, potlucks]);
 
     const editStyles = function() {
         return {
