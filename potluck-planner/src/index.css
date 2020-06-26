@@ -119,6 +119,7 @@ input[type='number'] {
   width: 70px;
 }
 
+/*
 .eventContainer {
   display: flex;
   flex-direction: column;
@@ -144,4 +145,5 @@ input[type='number'] {
   color: red;
   font-weight: bold;
 }
+*/
 /* End of Peter's Styles */

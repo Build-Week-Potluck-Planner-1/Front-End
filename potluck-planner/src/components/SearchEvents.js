@@ -32,16 +32,51 @@ function SearchEvents(props) {
             })
     }, []);
 
+    const pageStyle = function() {
+        return {
+            searchTool: {
+                width: '300px',
+                padding: '20px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                backgroundColor: 'black',
+                color: 'white'
+            },
+
+            normalSearch: {
+                width: '300px',
+                padding: '20px',
+                display: 'flex',
+                justifyContent: 'space-between',
+            },
+
+            searchLabel: {
+                fontWeight: 'bold'
+            },
+
+            searchBox: {
+                backgroundColor: 'black',
+                color: 'red',
+                border: '1px solid red',
+                borderRadius: '5px'
+            },
+
+            thePage: {
+                display: 'flex',
+                flexDirection: 'column',
+                margin: '10px 0',
+                width: '500px'
+            }
+        };
+    };
+
     return (
         <>
-        <label>
-            Search Events 
-            <input
-                value={searchVal}
-                onChange={filterEvents}
-            />
-        </label>
-        <div className='eventContainer'>
+        <div style={pageStyle().normalSearch}>
+            <label>Search Events:</label>
+            <input type='text' value={searchVal} onChange={filterEvents} />
+        </div>
+        <div style={pageStyle().thePage}>
             {newEvents.map(eventItem => (
                 <PotluckDetails key={eventItem.potluckId} theEvent={eventItem} />
             ))}
@@ -60,11 +95,34 @@ function PotluckDetails({theEvent}) {
         userStatus = 'Guest';
     }
 
+    const cardStyle = function() {
+        return {
+            eachCard: {
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '0 20px',
+                marginBottom: '20px',
+                backgroundColor: '#75DAFF',
+                border: '2px solid #1338BE',
+                borderRadius: '0 30px 30px 0',
+                boxShadow: '10px 10px 10px #75DAFF80'
+            },
+
+            theParagraph: {
+                fontSize: '1.2rem',
+                color: 'red',
+                fontWeight: 'bold'
+            }
+        };
+    };
+
     return (
         <Link to={`/searchform/${theEvent.potluckId}`}>
-            <div className='eventTitleCard'>
+            <div style={cardStyle().eachCard}>
                 <h1>{locationName}</h1>
-                <p>{userStatus}</p>
+                <p style={cardStyle().theParagraph}>{userStatus}</p>
             </div>
         </Link>
     );
