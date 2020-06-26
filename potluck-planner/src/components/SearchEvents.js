@@ -12,9 +12,9 @@ function SearchEvents(props) {
         const value = event.target.value;
         setSearchVal(value)
         setNewEvents(searchEvents.filter(potluck=>{
-            if(!searchVal){
+            if(!value){
                 return SearchEvents
-            }else{
+            }else if(value.length >= 1){
                 return potluck.locationName.toLowerCase().includes(value.toLowerCase())
             }
             
