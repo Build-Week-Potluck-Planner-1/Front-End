@@ -43,6 +43,7 @@ const StyledCards = styled.div`
         text-decoration: none;
         color: #990000;
         border: 4px solid #FFD700;
+        border-radius: 20px;
         background: linear-gradient(to top right, #FED23B, #FEE589, #FED23B);
         box-shadow: -10px 10px 10px #FEE589C0;
         height: 3%;
