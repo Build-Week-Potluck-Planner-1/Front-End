@@ -54,6 +54,10 @@ const StyledCards = styled.div`
         &:hover{
             background: rgb(200, 200, 210);
         }
+
+        p{
+            font-size: 1.6rem;
+        }
     }
 
     .eventName {
@@ -65,9 +69,17 @@ const StyledCards = styled.div`
 function Dashboard() {
     const dispatch = useDispatch()
     const potlucks = useSelector((state)=>state.potlucks)
+
+    function role(event){
+        if(event.role === 0){
+            return 'host'
+        }else{
+            return 'guest'
+        }
+    }
     useEffect(()=>{
         dispatch(checkDelete())
-    }, [])
+    }, [dispatch])
 
     return(
         <>
@@ -81,7 +93,7 @@ function Dashboard() {
                 to= {`/searchform/${potluck.id}`} 
                 key={potluck.id}
                 >
-                    <div className='eventName'>{potluck.locationName}</div>
+                    <div className='eventName'>{potluck.locationName}<p>{role(potluck)}</p></div>
                 </Link>
             )
         })}
